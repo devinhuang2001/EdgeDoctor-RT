@@ -1,0 +1,20 @@
+{
+  "model": "kaist-vibration-tflite-int8-v1",
+  "modality": "vibration",
+  "sha256": "57fccc6e7cdb9ee6d80a3838f8f458a14642b8aa7b7a51c3a5c152b3065e2abb",
+  "bytes": 4824,
+  "input_quantization": [
+    0.3921568989753723,
+    -128
+  ],
+  "output_quantization": [
+    0.07438512146472931,
+    -19
+  ],
+  "evaluation_windows": 200,
+  "fp32_accuracy": 0.965,
+  "int8_accuracy": 0.97,
+  "prediction_agreement": 0.995,
+  "board_parity": "MISSING_EVIDENCE",
+  "degradation_percentage_points": -0.5000000000000004
+}

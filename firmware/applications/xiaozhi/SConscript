@@ -1,0 +1,23 @@
+from building import *
+import os
+
+cwd     = GetCurrentDir()
+
+# Add all subdirectories to include path
+path = []
+path += [cwd]
+path += [cwd + '/ui', cwd + '/webnet', cwd + '/iot', cwd + '/mcp']
+path += [cwd + '/../../applications/edgedoctor/ui']
+# Add edge-impulse directory for wake word detection
+path += [cwd + '/../../edge-impulse']
+
+src = Glob('*.c') + Glob('*.cpp')
+
+group = DefineGroup('xiaozhi', src, depend = [''], CPPPATH = path, CPPDEFINES=['EDGEDOCTOR_RT'])
+
+list = os.listdir(cwd)
+for item in list:
+    if os.path.isfile(os.path.join(cwd, item, 'SConscript')):
+        group = group + SConscript(os.path.join(item, 'SConscript'))
+
+Return('group')

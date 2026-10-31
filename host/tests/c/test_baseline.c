@@ -1,0 +1,6 @@
+#include "ed_baseline.h"
+#include <assert.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+int main(void){ed_baseline_builder_t b;ed_baseline_t out;ed_features_t f;ed_asset_key_t key={0};unsigned i;strcpy(key.asset_id,"motor-1");strcpy(key.sensor_profile_hash,"imu-a");strcpy(key.operating_profile_id,"normal");key.mount_revision=2u;memset(&f,0,sizeof f);f.valid_mask=0x7fffu;ed_baseline_begin(&b,&key);assert(ed_baseline_preview(&b,&out)<0);assert(ed_baseline_feed_ex(&b,&f,ED_QUALITY_STALE,0,0,1u)<0);assert(ed_baseline_feed_ex(&b,&f,ED_QUALITY_VALID,1,0,1u)<0);assert(ed_baseline_feed_ex(&b,&f,ED_QUALITY_VALID,0,1,1u)<0);for(i=0;i<59;i++)assert(ed_baseline_feed(&b,&f)==0);assert(ed_baseline_preview(&b,&out)<0);assert(ed_baseline_feed(&b,&f)==0);assert(ed_baseline_commit(&b,&out)==0);assert(ed_baseline_key_matches(&out,&key)==1);key.mount_revision=3u;assert(ed_baseline_key_matches(&out,&key)==0);assert(out.valid_windows==60u);f.values[0]=.01f;assert(isfinite(ed_baseline_deviation(&out,&f)));f.values[14]=.001f;assert(ed_baseline_deviation(&out,&f)>900.f);ed_baseline_begin_at(&b,0,100u);assert(ed_baseline_feed_ex(&b,&f,ED_QUALITY_VALID,0,0,120000101u)==-2);assert(b.timed_out==1u);puts("baseline: all tests passed");return 0;}

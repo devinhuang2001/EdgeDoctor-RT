@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f9fafb">
+  <title>EdgeDoctor · 设备诊断</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+
+    <!-- 侧边导航（浅色） -->
+    <aside class="rail">
+      <a class="brand" href="#top" aria-label="EdgeDoctor 首页">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span class="brand-text">
+          <strong>EdgeDoctor</strong>
+          <small>设备诊断台</small>
+        </span>
+      </a>
+
+      <nav class="rail-nav" aria-label="主导航">
+        <a class="is-active" href="#top">总览</a>
+        <a href="#events-section">事件</a>
+        <a href="#trend-section">趋势</a>
+        <a href="#asset-section">数据边界</a>
+      </nav>
+
+      <div class="rail-foot">
+        <span class="rail-label">LAN SERVICE</span>
+        <span class="service-chip">
+          <i class="dot is-unknown" id="healthDot" aria-hidden="true"></i>
+          <span id="health">连接检查中</span>
+        </span>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main id="top" class="main">
+
+      <header class="topbar">
+        <div class="topbar-title">
+          <p class="kicker">EdgeDoctor 监测控制台</p>
+          <h1>设备监测</h1>
+        </div>
+        <div class="topbar-actions">
+          <span class="tag" title="数据来源">
+            <span class="tag-label">数据源</span>
+            <strong id="source">-</strong>
+          </span>
+          <span class="tag" title="通知通道状态">
+            <span class="tag-label">通知</span>
+            <strong id="notifyState">检查中</strong>
+          </span>
+          <button id="notifyTest" class="btn is-ghost" type="button">测试通知</button>
+          <button id="refresh" class="btn" type="button">刷新</button>
+        </div>
+      </header>
+
+      <!-- 状态卡（Callout 风格） -->
+      <section class="status-card" id="status-section" aria-live="polite">
+        <div class="status-main">
+          <p class="card-label">当前状态</p>
+          <div class="status-line">
+            <span class="status-glyph" id="stateGlyph" aria-hidden="true">-</span>
+            <h2 id="state">等待设备数据</h2>
+          </div>
+          <p class="status-meta">
+            <span>设备 <strong id="deviceId">ed84-001</strong></span>
+            <span class="dot-sep" aria-hidden="true">·</span>
+            <span id="stateDetail">服务端会在收到板端快照后更新</span>
+          </p>
+          <p id="advice" class="status-advice" hidden></p>
+        </div>
+        <div class="status-side">
+          <span class="card-label">信号质量</span>
+          <span class="quality-chip" id="quality">等待数据</span>
+        </div>
+      </section>
+
+      <!-- 指标卡 -->
+      <section class="kpis" aria-label="关键测量值">
+        <article class="stat">
+          <span class="stat-label">活动事件</span>
+          <div class="stat-row">
+            <span class="stat-value num" id="eventCount">-</span>
+          </div>
+        </article>
+
+        <article class="stat">
+          <span class="stat-label">RMS 振动</span>
+          <div class="stat-row">
+            <span class="stat-value num" id="rms">-</span>
+            <span class="stat-unit">g</span>
+          </div>
+          <div class="spark" id="rmsSpark"></div>
+        </article>
+
+        <article class="stat">
+          <span class="stat-label">异常分数</span>
+          <div class="stat-row">
+            <span class="stat-value num" id="score">-</span>
+            <span class="stat-unit">/ 100</span>
+          </div>
+          <div class="spark" id="scoreSpark"></div>
+        </article>
+
+        <article class="stat">
+          <span class="stat-label">基线状态</span>
+          <div class="stat-row">
+            <span class="stat-value is-text" id="deviation">-</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- 趋势 + 事件 -->
+      <section class="grid">
+
+        <article class="card" id="trend-section">
+          <div class="card-head">
+            <div>
+              <h3>RMS 振动趋势</h3>
+              <p class="card-sub" id="trendMeta">遥测</p>
+            </div>
+          </div>
+          <div id="trend" class="trend" aria-live="polite"></div>
+        </article>
+
+        <article class="card" id="events-section">
+          <div class="card-head">
+            <div>
+              <h3>最近事件</h3>
+              <p class="card-sub" id="eventNote">-</p>
+            </div>
+          </div>
+          <div id="events" class="events" aria-live="polite"></div>
+        </article>
+
+      </section>
+
+      <!-- 数据边界说明 -->
+      <p class="disclaimer" id="asset-section">
+        <strong>数据边界</strong>
+        当前数据源为 LIVE_IMU，仅表示振动相对基线的观测偏离；没有实测依据时不输出五类故障归因。
+      </p>
+
+      <footer class="foot">
+        <p>EdgeDoctor-RT LAN 服务</p>
+        <code id="updated">尚未更新</code>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

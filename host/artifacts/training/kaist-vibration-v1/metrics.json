@@ -1,0 +1,234 @@
+{
+  "dataset": {
+    "name": "KAIST rotating machine vibration",
+    "doi": "10.17632/ztmf3m7h5x.6",
+    "license": "CC BY 4.0",
+    "recordings": 45,
+    "windows": 1800,
+    "windows_per_recording": 40,
+    "vibration_archive_sha256": "df73fa80371a2ad3c983825044447b7772fcefd1db2ac409b2b298b533e4659f",
+    "acoustic_limitation": "5 zero-load files; not synchronized with vibration; excluded from five-class training"
+  },
+  "split": {
+    "unit": "recording",
+    "train_windows": 1400,
+    "validation_windows": 200,
+    "test_windows": 200
+  },
+  "model": {
+    "architecture": "64-32-5 MLP ReLU on normalized vibration spectrum",
+    "fp32_state_bytes": 11229,
+    "dynamic_int8_state_bytes": 5965,
+    "static_int8_parameter_bytes": 2508,
+    "board_export": "D:\\CODEX SPACE\\infei\\xiaozhi\\EdgeDoctor-RT\\firmware\\common\\include\\edgedoctor_onboard_model_params.h"
+  },
+  "e1_fp32": {
+    "accuracy": 0.965,
+    "macro_f1": 0.964399293633657,
+    "macro_auc_ovr": 1.0,
+    "confusion_matrix": [
+      [
+        33,
+        0,
+        0,
+        6,
+        1
+      ],
+      [
+        0,
+        40,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        40,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        40,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        40
+      ]
+    ],
+    "classification_report": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 0.825,
+        "f1-score": 0.9041095890410958,
+        "support": 40.0
+      },
+      "Inner race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 40.0
+      },
+      "Outer race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 40.0
+      },
+      "Misalignment": {
+        "precision": 0.8695652173913043,
+        "recall": 1.0,
+        "f1-score": 0.9302325581395349,
+        "support": 40.0
+      },
+      "Unbalance": {
+        "precision": 0.975609756097561,
+        "recall": 1.0,
+        "f1-score": 0.9876543209876543,
+        "support": 40.0
+      },
+      "accuracy": 0.965,
+      "macro avg": {
+        "precision": 0.969034994697773,
+        "recall": 0.9650000000000001,
+        "f1-score": 0.964399293633657,
+        "support": 200.0
+      },
+      "weighted avg": {
+        "precision": 0.9690349946977732,
+        "recall": 0.965,
+        "f1-score": 0.9643992936336571,
+        "support": 200.0
+      }
+    }
+  },
+  "e1_dynamic_int8": {
+    "accuracy": 0.97,
+    "macro_f1": 0.9695499420989616,
+    "macro_auc_ovr": 1.0,
+    "confusion_matrix": [
+      [
+        34,
+        0,
+        0,
+        5,
+        1
+      ],
+      [
+        0,
+        40,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        40,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        40,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        40
+      ]
+    ],
+    "classification_report": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 0.85,
+        "f1-score": 0.918918918918919,
+        "support": 40.0
+      },
+      "Inner race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 40.0
+      },
+      "Outer race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 40.0
+      },
+      "Misalignment": {
+        "precision": 0.8888888888888888,
+        "recall": 1.0,
+        "f1-score": 0.9411764705882353,
+        "support": 40.0
+      },
+      "Unbalance": {
+        "precision": 0.975609756097561,
+        "recall": 1.0,
+        "f1-score": 0.9876543209876543,
+        "support": 40.0
+      },
+      "accuracy": 0.97,
+      "macro avg": {
+        "precision": 0.9728997289972898,
+        "recall": 0.97,
+        "f1-score": 0.9695499420989616,
+        "support": 200.0
+      },
+      "weighted avg": {
+        "precision": 0.9728997289972899,
+        "recall": 0.97,
+        "f1-score": 0.9695499420989617,
+        "support": 200.0
+      }
+    }
+  },
+  "e1_static_int8": {
+    "accuracy": 0.965,
+    "macro_f1": 0.9641791631453784,
+    "prediction_agreement_with_fp32": 0.995,
+    "parameter_bytes": 2508
+  },
+  "lolo": {
+    "0 Nm": {
+      "accuracy": 0.9233333333333333,
+      "macro_f1": 0.8764384860226077,
+      "macro_auc_ovr": 0.9999295634920635
+    },
+    "2 Nm": {
+      "accuracy": 0.935,
+      "macro_f1": 0.9044393514981751,
+      "macro_auc_ovr": 0.9997207341269843
+    },
+    "4 Nm": {
+      "accuracy": 0.8216666666666667,
+      "macro_f1": 0.7787575976784986,
+      "macro_auc_ovr": 0.9747455753968254
+    }
+  },
+  "training": {
+    "seed": 20260901,
+    "epochs": 100,
+    "best_validation_macro_f1": 0.8361372831474079,
+    "elapsed_seconds": 20.25653648376465
+  },
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "numpy": "2.2.5",
+    "torch": "2.13.0+cpu"
+  }
+}

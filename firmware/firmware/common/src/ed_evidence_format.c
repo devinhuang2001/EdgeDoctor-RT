@@ -1,0 +1,7 @@
+#include "ed_evidence_format.h"
+#include <string.h>
+#define CRC_INIT 0xffffffffu
+static uint32_t crc32(const uint8_t*p,size_t n){uint32_t c=CRC_INIT;size_t i;unsigned b;for(i=0;i<n;i++){c^=p[i];for(b=0;b<8;b++)c=(c>>1)^((c&1u)?0xedb88320u:0u);}return c^CRC_INIT;}
+static void le16(uint8_t*p,uint16_t v){p[0]=(uint8_t)v;p[1]=(uint8_t)(v>>8);} static void le32(uint8_t*p,uint32_t v){p[0]=(uint8_t)v;p[1]=(uint8_t)(v>>8);p[2]=(uint8_t)(v>>16);p[3]=(uint8_t)(v>>24);}
+int ed_edv2_pack(const uint8_t*m,uint32_t ml,const int16_t*xyz,uint32_t n,uint8_t*out,size_t cap,size_t*w){uint32_t pl=n*6u;if(!m||!xyz||!out||!w||ml>2048u||pl>16384u||cap<(size_t)24u+ml+pl+4u)return-1;memcpy(out,"EDV2",4);le16(out+4,2);le16(out+6,24);le32(out+8,ml);le32(out+12,pl);le32(out+16,crc32(m,ml));le32(out+20,crc32((const uint8_t*)xyz,pl));memcpy(out+24,m,ml);memcpy(out+24+ml,xyz,pl);le32(out+24+ml+pl,crc32((const uint8_t*)xyz,pl));*w=24u+ml+pl+4u;return 0;}
+int ed_edv2_validate(const uint8_t*b,size_t n){uint32_t ml,pl; if(!b||n<28u||memcmp(b,"EDV2",4)!=0||b[4]!=2||b[5]!=0||b[6]!=24||b[7]!=0)return-1;ml=(uint32_t)b[8]|((uint32_t)b[9]<<8)|((uint32_t)b[10]<<16)|((uint32_t)b[11]<<24);pl=(uint32_t)b[12]|((uint32_t)b[13]<<8)|((uint32_t)b[14]<<16)|((uint32_t)b[15]<<24);if(ml>2048u||pl>16384u||n!=(size_t)28u+ml+pl)return-1;return crc32(b+24,ml)==((uint32_t)b[16]|((uint32_t)b[17]<<8)|((uint32_t)b[18]<<16)|((uint32_t)b[19]<<24))&&crc32(b+24+ml,pl)==((uint32_t)b[24+ml+pl]|((uint32_t)b[25+ml+pl]<<8)|((uint32_t)b[26+ml+pl]<<16)|((uint32_t)b[27+ml+pl]<<24))?0:-1;}

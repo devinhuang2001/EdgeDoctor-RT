@@ -1,0 +1,74 @@
+import os
+from building import *
+
+Import('env')
+
+application_root = os.environ.get('EDGEDOCTOR_APP_DIR', GetCurrentDir())
+project_root = os.path.abspath(os.path.join(application_root, '..', '..'))
+common_root = os.path.join(project_root, 'firmware', 'common')
+bsp_root = os.path.abspath(os.path.join(GetCurrentDir(), '..', '..'))
+mbedtls_root = os.path.join(bsp_root, 'packages', 'mbedtls-v2.28.1')
+cmsis_dsp_root = os.path.join(bsp_root, 'edge-impulse', 'edge-impulse-sdk', 'CMSIS', 'DSP')
+
+# The standalone Arm GNU Windows distribution needs its selected multilib C++
+# directory on SCons' explicit include list. Keep this outside vendor rtconfig.py.
+cxx_include = os.environ.get('EDGEDOCTOR_CXX_INCLUDE')
+if cxx_include:
+    env.AppendUnique(CPPPATH=[cxx_include])
+
+# EdgeDoctor owns its inference dependency group independently of the optional
+# XiaoZhi wake-word runtime. Do not enable the unrelated DEEPCRAFT vision app.
+sdk_libraries = os.path.join(bsp_root, 'libraries')
+if not os.path.isdir(sdk_libraries):
+    sdk_libraries = os.path.abspath(os.path.join(bsp_root, '..', '..', 'libraries'))
+sdk_libraries = os.environ.get('EDGEDOCTOR_SDK_LIBRARIES', sdk_libraries)
+tflm = os.path.join(sdk_libraries, 'Common', 'deepcraft_ai', 'third_party',
+                    'ml-tflite-micro', 'COMPONENT_ML_TFLM')
+u55 = os.path.join(sdk_libraries, 'components', 'mtb-device-support-pse8xxgp',
+                   'pdl', 'drivers', 'third_party', 'COMPONENT_U55')
+env.AppendUnique(CPPPATH=[os.path.join(tflm, 'include'),
+    os.path.join(tflm, 'include', 'flatbuffers', 'include'),
+    os.path.join(tflm, 'include', 'gemmlowp'),
+    os.path.join(u55, 'include'), os.path.join(u55, 'src')])
+env.AppendUnique(CPPDEFINES=['TF_LITE_STATIC_MEMORY', 'ETHOSU55'])
+env.AppendUnique(LIBPATH=[os.path.join(tflm, 'COMPONENT_U55', 'TOOLCHAIN_GCC_ARM')],
+                 LIBS=['tensorflow-microlite'])
+
+sources = Glob(os.path.join(common_root, 'src', '*.c'))
+sources += Glob(os.path.join(application_root, 'runtime', '*.c'))
+sources += Glob(os.path.join(application_root, 'dsp', '*.c'))
+sources += Glob(os.path.join(application_root, 'inference', '*.c'))
+sources += Glob(os.path.join(application_root, 'inference', '*.cpp'))
+sources += Glob(os.path.join(application_root, 'profiler', '*.c'))
+sources += Glob(os.path.join(application_root, 'ui', '*.c'))
+sources += Glob(os.path.join(application_root, 'logger', '*.c'))
+sources += Glob(os.path.join(application_root, 'sensor', '*.c'))
+sources += Glob(os.path.join(application_root, 'protocol', '*.c'))
+
+sources += [os.path.join(u55, 'src', name) for name in
+    ['ethosu_driver.c', 'ethosu_device_u55_u65.c', 'ethosu_pmu.c']]
+
+group = DefineGroup(
+    'EdgeDoctor',
+    sources,
+    depend=[],
+    CPPPATH=[
+        os.path.join(common_root, 'include'),
+        os.path.join(application_root, 'runtime'),
+        os.path.join(application_root, 'dsp'),
+        os.path.join(application_root, 'inference'),
+        os.path.join(application_root, 'profiler'),
+        os.path.join(application_root, 'ui'),
+        os.path.join(application_root, 'logger'),
+        os.path.join(application_root, 'sensor'),
+        os.path.join(application_root, 'protocol'),
+        os.path.join(cmsis_dsp_root, 'Include'),
+        os.path.join(cmsis_dsp_root, 'PrivateInclude'),
+        os.path.join(os.path.dirname(cmsis_dsp_root), 'Core', 'Include'),
+        os.path.join(mbedtls_root, 'ports', 'inc'),
+        os.path.join(mbedtls_root, 'mbedtls', 'include'),
+    ],
+    LOCAL_CFLAGS=' -DARM_MATH_CM55 -DARM_MATH_DSP -DARM_MATH_AUTOVECTORIZE -DEDGEDOCTOR_RT -DETHOSU_SEMAPHORE_WAIT_INFERENCE=2000',
+)
+
+Return('group')

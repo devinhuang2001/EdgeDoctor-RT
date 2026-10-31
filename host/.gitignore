@@ -1,0 +1,45 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv-inference/
+build/
+Debug/
+.sconsign.dblite
+tmp/
+*.o
+*.elf
+*.hex
+*.bin
+data/raw/
+data/edgepack/*.edgp
+data/edgepack/*.csv
+ai/artifacts/
+benchmark/results/*.csv
+benchmark/results/*.json
+benchmark/results/**/*.csv
+benchmark/results/**/*.json
+benchmark/results/**/*.partial
+!benchmark/results/.gitkeep
+# 电脑版控制台验收证据必须随仓库保留（规格 02 §1）：
+# 默认规则忽略 benchmark 下的 json/csv，这里逐条放行验收目录。
+!benchmark/results/desktop-dashboard/
+!benchmark/results/desktop-dashboard/**
+!benchmark/results/desktop-dashboard/**/*.json
+!benchmark/results/desktop-dashboard/**/*.txt
+!benchmark/results/desktop-dashboard/**/*.log
+# 但不要把 trace、视频与隔离数据库提交进去
+benchmark/results/desktop-dashboard/**/artifacts/
+benchmark/results/desktop-dashboard/**/*.db
+benchmark/results/desktop-dashboard/**/*.db-wal
+benchmark/results/desktop-dashboard/**/*.db-shm
+benchmark/results/desktop-dashboard/**/evidence/
+
+# Node 依赖与前一轮安装残留
+node_modules/
+node_modules.install-recovery/
+
+# 电脑版控制台的构建产物：由 scripts/test-ui.ps1 第 1 步或 `npm run build` 重新生成，
+# 文件名带内容哈希，每次构建都会全量变动。源码在 ui/desktop，模型源在
+# ui/desktop/public/models，因此这里不入库。
+server/web-v2/

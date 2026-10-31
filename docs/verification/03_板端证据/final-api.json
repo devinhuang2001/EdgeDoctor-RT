@@ -1,0 +1,117 @@
+{
+  "factory": {
+    "assets": [
+      {
+        "asset_id": "motor-01",
+        "device_id": "ed84-001",
+        "scene_instance": "MOTOR_01",
+        "zone": "B",
+        "detail_model": "models/induction_motor.glb",
+        "sensor_node": "IMU_Sensor",
+        "display_name_zh": "旋转实验区电机 01",
+        "binding_state": "verified",
+        "status": "ONLINE",
+        "last_telemetry_received_ms": 1790954927919
+      },
+      {
+        "asset_id": "cnc-01",
+        "device_id": null,
+        "scene_instance": "CNC_MACHINE_01",
+        "zone": "A",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "生产区数控加工中心",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "pumpset-02",
+        "device_id": null,
+        "scene_instance": "PUMPSET_02",
+        "zone": "C",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "公用工程循环泵机组",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "agv-02",
+        "device_id": null,
+        "scene_instance": "AGV_02",
+        "zone": "D",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "仓储物流搬运车",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "spare-motor-01",
+        "device_id": null,
+        "scene_instance": "SPARE_MOTOR_01",
+        "zone": "E",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "检修区备用电机",
+        "binding_state": "provisional",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "gateway-01",
+        "device_id": null,
+        "scene_instance": "MQTT_GATEWAY_01",
+        "zone": "F",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "IT/OT 区 MQTT 网关",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      }
+    ],
+    "counts": {
+      "ONLINE": 1,
+      "STALE": 0,
+      "UNKNOWN": 5
+    },
+    "online_threshold_ms": 30000
+  },
+  "status": {
+    "device_id": "ed84-001",
+    "status": "ALARM",
+    "event": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-66-1",
+      "revision": 2,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "ACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "snapshot_id": null,
+      "peak_deviation": 0.0
+    },
+    "snapshot_age_ms": 98335,
+    "telemetry": {
+      "device_id": "ed84-001",
+      "mono_ms": 606230,
+      "rms_vector_g": 0.00143096,
+      "alarm": false,
+      "idle": true
+    },
+    "advice": "确认报警并检查安装、负载和传动部件",
+    "read_only": true
+  },
+  "telemetry_count": 755,
+  "idle_telemetry_count": 448,
+  "latest_idle": [
+    "{\"device_id\":\"ed84-001\",\"mono_ms\":606230,\"rms_vector_g\":0.00143096,\"alarm\":false,\"idle\":true}"
+  ]
+}

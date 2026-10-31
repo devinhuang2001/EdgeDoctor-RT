@@ -1,0 +1,164 @@
+warning: in the working copy of 'app/edgepet/edgepet_sensor.c', LF will be replaced by CRLF the next time Git touches it
+diff --git a/app/edgepet/edgepet_sensor.c b/app/edgepet/edgepet_sensor.c
+index 22093a1..5431f2f 100644
+--- a/app/edgepet/edgepet_sensor.c
++++ b/app/edgepet/edgepet_sensor.c
+@@ -16,6 +16,8 @@
+ #define EDGEPET_LSM6DS3_OUTX_L_G      0x22U
+ #define EDGEPET_LSM6DS3_OUTX_L_XL     0x28U
+ #define EDGEPET_SENSOR_POLL_MS        50U
++#define EDGEPET_SENSOR_RETRY_MS       2000U
++#define EDGEPET_SENSOR_FAILURE_LIMIT  3U
+ #define EDGEPET_SHAKE_COOLDOWN_MS     2000U
+ #define EDGEPET_SHAKE_DELTA_THRESHOLD 12000L
+ 
+@@ -27,6 +29,10 @@ static rt_bool_t s_sensor_lock_ready;
+ static struct rt_mutex s_sensor_lock;
+ static struct rt_thread s_sensor_thread;
+ static rt_uint8_t s_sensor_thread_stack[2048];
++static rt_uint32_t s_sensor_sample_count;
++static rt_uint32_t s_sensor_shake_count;
++static rt_uint32_t s_sensor_recovery_count;
++static rt_int32_t s_sensor_max_delta;
+ 
+ static int edgepet_sensor_read(rt_uint8_t reg, rt_uint8_t *data, rt_uint16_t length)
+ {
+@@ -215,20 +221,46 @@ static void edgepet_sensor_thread_entry(void *parameter)
+     rt_int16_t previous_z = 0;
+     rt_bool_t have_previous = RT_FALSE;
+     rt_uint32_t cooldown_ms = 0U;
++    rt_uint8_t failure_count = 0U;
+ 
+     (void)parameter;
+     while (1)
+     {
++        if (!s_sensor_ready)
++        {
++            if ((edgepet_sensor_find() == RT_EOK) &&
++                (edgepet_sensor_configure() == RT_EOK))
++            {
++                s_sensor_recovery_count++;
++                have_previous = RT_FALSE;
++                failure_count = 0U;
++                rt_kprintf("[edgepet] LSM6DS3 recovered on %s addr=0x%02X\n",
++                           EDGEPET_SENSOR_BUS_NAME, s_sensor_addr);
++            }
++            else
++            {
++                rt_thread_mdelay(EDGEPET_SENSOR_RETRY_MS);
++                continue;
++            }
++        }
++
+         if (edgepet_sensor_read_accel(&x, &y, &z) == RT_EOK)
+         {
++            failure_count = 0U;
++            s_sensor_sample_count++;
+             if (have_previous)
+             {
+                 rt_int32_t delta = edgepet_sensor_abs((rt_int32_t)x - previous_x) +
+                                    edgepet_sensor_abs((rt_int32_t)y - previous_y) +
+                                    edgepet_sensor_abs((rt_int32_t)z - previous_z);
++                if (delta > s_sensor_max_delta)
++                {
++                    s_sensor_max_delta = delta;
++                }
+                 if ((cooldown_ms == 0U) && (delta >= EDGEPET_SHAKE_DELTA_THRESHOLD))
+                 {
+                     edgepet_app_dispatch(EDGEPET_EVENT_SHAKE);
++                    s_sensor_shake_count++;
+                     cooldown_ms = EDGEPET_SHAKE_COOLDOWN_MS;
+                 }
+             }
+@@ -237,6 +269,17 @@ static void edgepet_sensor_thread_entry(void *parameter)
+             previous_z = z;
+             have_previous = RT_TRUE;
+         }
++        else
++        {
++            failure_count++;
++            if (failure_count >= EDGEPET_SENSOR_FAILURE_LIMIT)
++            {
++                s_sensor_ready = RT_FALSE;
++                have_previous = RT_FALSE;
++                failure_count = 0U;
++                rt_kprintf("[edgepet] LSM6DS3 read failed; retrying\n");
++            }
++        }
+ 
+         if (cooldown_ms > EDGEPET_SENSOR_POLL_MS)
+         {
+@@ -252,6 +295,8 @@ static void edgepet_sensor_thread_entry(void *parameter)
+ 
+ int edgepet_sensor_start(void)
+ {
++    rt_bool_t detected;
++
+     if (s_sensor_thread_started)
+     {
+         return RT_EOK;
+@@ -260,11 +305,8 @@ int edgepet_sensor_start(void)
+     rt_mutex_init(&s_sensor_lock, "ep_i2c", RT_IPC_FLAG_PRIO);
+     s_sensor_lock_ready = RT_TRUE;
+ 
+-    if ((edgepet_sensor_find() != RT_EOK) || (edgepet_sensor_configure() != RT_EOK))
+-    {
+-        rt_kprintf("[edgepet] IMU not found; shake monitor disabled\n");
+-        return -RT_ERROR;
+-    }
++    detected = ((edgepet_sensor_find() == RT_EOK) &&
++                (edgepet_sensor_configure() == RT_EOK));
+ 
+     rt_thread_init(&s_sensor_thread,
+                    "ep_imu",
+@@ -276,8 +318,15 @@ int edgepet_sensor_start(void)
+                    10);
+     rt_thread_startup(&s_sensor_thread);
+     s_sensor_thread_started = RT_TRUE;
+-    rt_kprintf("[edgepet] LSM6DS3 shake monitor started on %s addr=0x%02X\n",
+-               EDGEPET_SENSOR_BUS_NAME, s_sensor_addr);
++    if (detected)
++    {
++        rt_kprintf("[edgepet] LSM6DS3 shake monitor started on %s addr=0x%02X\n",
++                   EDGEPET_SENSOR_BUS_NAME, s_sensor_addr);
++    }
++    else
++    {
++        rt_kprintf("[edgepet] LSM6DS3 unavailable; monitor will retry\n");
++    }
+     return RT_EOK;
+ }
+ 
+@@ -295,16 +344,29 @@ static void edgepet_sensor(int argc, char **argv)
+         return;
+     }
+ 
+-    if (edgepet_sensor_find() != RT_EOK)
++    if (!s_sensor_ready && (edgepet_sensor_find() != RT_EOK))
+     {
+-        rt_kprintf("EdgePet sensor: LSM6DS3 not found on %s (0x6A/0x6B)\n",
+-                   EDGEPET_SENSOR_BUS_NAME);
++        rt_kprintf("EdgePet sensor: LSM6DS3 not found on %s (0x6A/0x6B), retry active=%s\n",
++                   EDGEPET_SENSOR_BUS_NAME,
++                   s_sensor_thread_started ? "yes" : "no");
++        rt_kprintf("samples=%u shakes=%u max_delta=%d threshold=%d recoveries=%u\n",
++                   s_sensor_sample_count,
++                   s_sensor_shake_count,
++                   s_sensor_max_delta,
++                   EDGEPET_SHAKE_DELTA_THRESHOLD,
++                   s_sensor_recovery_count);
+         return;
+     }
+ 
+     (void)edgepet_sensor_read(EDGEPET_LSM6DS3_WHO_AM_I, &who_am_i, 1U);
+     rt_kprintf("EdgePet sensor: LSM6DS3 found on %s addr=0x%02X who=0x%02X\n",
+                EDGEPET_SENSOR_BUS_NAME, s_sensor_addr, who_am_i);
++    rt_kprintf("samples=%u shakes=%u max_delta=%d threshold=%d recoveries=%u\n",
++               s_sensor_sample_count,
++               s_sensor_shake_count,
++               s_sensor_max_delta,
++               EDGEPET_SHAKE_DELTA_THRESHOLD,
++               s_sensor_recovery_count);
+     if ((argc == 2) && (rt_strcmp(argv[1], "read") == 0) &&
+         (edgepet_sensor_read_once() != RT_EOK))
+     {

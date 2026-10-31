@@ -1,0 +1,13 @@
+{
+  "durationSeconds": 60,
+  "interactions": 171,
+  "longTasks": [
+    71
+  ],
+  "longTaskCount": 1,
+  "longestTaskMs": 71,
+  "frames": 3605,
+  "maxFrameGapMs": 71,
+  "heapUsedMB": 21,
+  "heapLimitMB": 4192
+}

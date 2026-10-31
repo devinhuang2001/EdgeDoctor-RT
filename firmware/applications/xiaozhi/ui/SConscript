@@ -1,0 +1,18 @@
+import os
+from building import *
+
+cwd  = GetCurrentDir()
+path = []
+path += [cwd]
+# Add source code
+src = [item for item in Glob('*.c')
+       if os.path.basename(str(item)) != 'xiaozhi_ui.c']
+
+group = DefineGroup('xiaozhi_ui', src, depend = [''], CPPPATH = path)
+
+list = os.listdir(cwd)
+for item in list:
+    if item != '3d_demo' and os.path.isfile(os.path.join(cwd, item, 'SConscript')):
+        group = group + SConscript(os.path.join(item, 'SConscript'))
+
+Return('group')

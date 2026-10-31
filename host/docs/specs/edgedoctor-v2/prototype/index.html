@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EdgeDoctor V2 · 交互设计规格</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="workbench">
+    <header class="intro">
+      <div><span class="eyebrow">EDGEDOCTOR / DESIGN STUDY 02</span><h1>设备有变化，一眼就知道。</h1><p>板载振动监测 · 基线对比 · MQTT 事件闭环</p></div>
+      <span class="version">800 × 480<br><b>交互规格 / 设计样例</b></span>
+    </header>
+    <div class="scenarios" aria-label="切换设计场景">
+      <span>体验场景</span>
+      <button data-scenario="normal" class="selected">基线范围内</button>
+      <button data-scenario="alarm">振动异常</button>
+      <button data-scenario="offline">网络断开</button>
+      <button data-scenario="baseline">尚无基线</button>
+      <button data-scenario="idle">设备静止</button>
+      <button data-scenario="stale">数据过期</button>
+    </div>
+    <div class="device-wrap">
+      <div class="screen" id="screen">
+        <aside class="rail">
+          <div class="brand" aria-label="EdgeDoctor"><svg viewBox="0 0 32 32" fill="none"><path d="M4 17h6l4-10 5 19 4-9h5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><b>ED</b></div>
+          <nav id="navigation" aria-label="设备主导航"></nav>
+          <div class="rail-foot"><i></i> 样例数据<small>ED84 · 001</small></div>
+        </aside>
+        <section class="app">
+          <header class="statusbar"><button class="asset-button" id="asset-link">电机 01 <span>⌄</span></button><span class="source-tag">设计样例</span><div class="status-right"><span id="quality-tag"></span><button id="network-tag"></button><button id="voice-button" title="语音查询样例" aria-label="语音查询样例"></button></div></header>
+          <main id="page"></main>
+        </section>
+        <div id="modal-root"></div>
+        <div id="toast" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+    <footer class="design-notes">
+      <div><span>01 / 信息有依据</span><p>物理幅值、基线偏离与信号质量分开表达。</p></div>
+      <div><span>02 / 处理有记录</span><p>“已确认”与“已恢复”是两个独立状态。</p></div>
+      <div><span>03 / 断网仍监测</span><p>网络状态独立显示，事件保存后等待补传。</p></div>
+    </footer>
+    <p class="disclaimer">所有曲线、事件、时间和数值均为合成设计样例。按钮仅演示交互，不连接 MQTT、板子或手机；不是实机验收证据。</p>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

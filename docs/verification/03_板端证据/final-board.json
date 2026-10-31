@@ -1,0 +1,12 @@
+{
+  "edgeimu info": "edgeimu info\r\nedgeimu: running=1 nominal_hz=208 measured_millihz=210820 samples=93272 drops=0 gaps=0 bus_errors=0 queue_high=1\r\nmsh />\r\nmsh />",
+  "edgeimu sample": "edgeimu sample\r\nedgeimu: quality=1 rms_x=0.000883 rms_y=0.000753 rms_z=0.000782 vector_rms=0.001400 baseline=1 deviation=nan\r\nmsh />\r\nmsh />",
+  "edmqtt info": "edmqtt info\r\nedmqtt: connected=1 queued=1 sent=616 persisted=450 rejected=464 inbox_dropped=74\r\nmsh />\r\nmsh />",
+  "df /flash": "df /flash\r\ndisk free: 0.0 KB [ 0 block, 65536 bytes per block ]\r\nmsh />\r\nmsh />",
+  "factory/summary": {
+    "error": "HTTP Error 404: Not Found"
+  },
+  "events": {
+    "error": "HTTP Error 404: Not Found"
+  }
+}

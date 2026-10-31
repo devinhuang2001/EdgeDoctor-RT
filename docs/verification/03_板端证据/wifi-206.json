@@ -1,0 +1,7 @@
+{
+  "disconnect": "wifi disc\r\n\u001b[33m[W/wifi.mgr] STA disconnected from router\u001b[0m\r\n[DHCP] dhcpd_stop: w0\r\r\n\u001b[32m[I/WLAN.mgnt] disconnect success!\u001b[0m\r\nmsh />\r\nmsh />\u001b[33m[W/wifi.mgr] STA disconnected from router\u001b[0m\r\n",
+  "join": "wifi join \"206\" \"<redacted>\"\r\n\u001b[31m[E/xz.ws] Waiting internet... \r\n\u001b[0m\r\n\u001b[31m[E/xz.ws] Waiting internet... \r\n\u001b[0m\r\n\u001b[31m[E/xz.ws] Waiting internet... \r\n\u001b[0m\r\n\u001b[31m[E/xz.ws] Waiting internet... \r\n\u001b[0m\r\n\u001b[32m[I/WLAN.mgnt] wifi connect success ssid:206\u001b[0m\r\nmsh />\r\nmsh />",
+  "wifi status": "wifi status\r\nWi-Fi STA Info\r\nSSID : 206\r\nMAC Addr: 00:00:00:00:00:00\r\nChannel: -1\r\nDataRate: 0Mbps\r\nRSSI: -49\r\nwifi ap not start!\r\nAuto Connect status:Disable!\r\nmsh />\r\nmsh />",
+  "ifconfig": "ifconfig\r\nnetwork interface device: w0 (Default)\r\nMTU: 1500\r\nMAC: 9c c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_UP INTERNET_UP DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 192.168.1.4\r\ngw address: 192.168.1.1\r\nnet mask  : 255.255.255.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\n\r\nnetwork interface device: w1\r\nMTU: 1500\r\nMAC: 9e c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_DOWN INTERNET_DOWN DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 0.0.0.0\r\ngw address: 0.0.0.0\r\nnet mask  : 0.0.0.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\nmsh />\r\nmsh />",
+  "edmqtt info": "edmqtt info\r\nedmqtt: connected=0 queued=47 sent=0 persisted=0 rejected=210\r\nmsh />\r\nmsh />"
+}

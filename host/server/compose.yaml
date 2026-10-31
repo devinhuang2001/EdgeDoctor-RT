@@ -1,0 +1,60 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    restart: unless-stopped
+    ports: ["8883:8883"]
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./passwd:/mosquitto/config/passwd:ro
+      - ./data:/mosquitto/data
+      - ./log:/mosquitto/log
+    environment:
+      EDGEDOCTOR_MQTT_USER: ${EDGEDOCTOR_MQTT_USER:-edgedoctor}
+      EDGEDOCTOR_MQTT_PASSWORD: ${EDGEDOCTOR_MQTT_PASSWORD:-}
+    healthcheck:
+      test: ["CMD-SHELL", "mosquitto_sub -h 127.0.0.1 -p 8883 -t '$$SYS/broker/uptime' -C 1 -W 3 -u '$$EDGEDOCTOR_MQTT_USER' -P '$$EDGEDOCTOR_MQTT_PASSWORD' >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  edgedoctor-api:
+    build: .
+    environment:
+      EDGEDOCTOR_DB: /var/lib/edgedoctor/edgedoctor.db
+      EDGEDOCTOR_API_TOKEN: ${EDGEDOCTOR_API_TOKEN:-}
+      EDGEDOCTOR_NTFY_URL: ${EDGEDOCTOR_NTFY_URL:-}
+      EDGEDOCTOR_NTFY_TOPIC: ${EDGEDOCTOR_NTFY_TOPIC:-}
+      EDGEDOCTOR_NTFY_TOKEN: ${EDGEDOCTOR_NTFY_TOKEN:-}
+    ports: ["127.0.0.1:8080:8080"]
+    volumes:
+      - ./data:/var/lib/edgedoctor
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health/ready', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  edgedoctor-ingest:
+    build: .
+    command: ["python", "-m", "server.mqtt_ingest"]
+    environment:
+      EDGEDOCTOR_DB: /var/lib/edgedoctor/edgedoctor.db
+      EDGEDOCTOR_API_TOKEN: ${EDGEDOCTOR_API_TOKEN:-}
+      EDGEDOCTOR_MQTT_TLS: ${EDGEDOCTOR_MQTT_TLS:-1}
+      EDGEDOCTOR_MQTT_CA: ${EDGEDOCTOR_MQTT_CA:-/run/secrets/mqtt_ca.crt}
+      EDGEDOCTOR_MQTT_USER: ${EDGEDOCTOR_MQTT_USER:-edgedoctor}
+      EDGEDOCTOR_MQTT_PASSWORD: ${EDGEDOCTOR_MQTT_PASSWORD:-}
+      EDGEDOCTOR_MQTT_HOST: mosquitto
+      EDGEDOCTOR_MQTT_PORT: ${EDGEDOCTOR_MQTT_PORT:-8883}
+      EDGEDOCTOR_EVENTS_TOPIC: ${EDGEDOCTOR_EVENTS_TOPIC:-edgedoctor/+/+/#}
+      EDGEDOCTOR_CLIENT_ID: ${EDGEDOCTOR_CLIENT_ID:-edgedoctor-ingest}
+      # Must match the site passed to `edmqtt config` on the device, or queued
+      # commands are published to a topic the device is not subscribed to.
+      EDGEDOCTOR_SITE_ID: ${EDGEDOCTOR_SITE_ID:-site_1}
+    volumes:
+      - ./data:/var/lib/edgedoctor
+      - ${EDGEDOCTOR_MQTT_CA:-./ca.crt}:/run/secrets/mqtt_ca.crt:ro
+    depends_on:
+      mosquitto:
+        condition: service_healthy

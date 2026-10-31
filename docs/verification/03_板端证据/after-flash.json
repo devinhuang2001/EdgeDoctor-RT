@@ -1,0 +1,88 @@
+{
+  "ifconfig": "ifconfig\r\nnetwork interface device: w0 (Default)\r\nMTU: 1500\r\nMAC: 9c c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_UP INTERNET_UP DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 192.168.1.4\r\ngw address: 192.168.1.1\r\nnet mask  : 255.255.255.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\n\r\nnetwork interface device: w1\r\nMTU: 1500\r\nMAC: 9e c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_DOWN INTERNET_DOWN DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 0.0.0.0\r\ngw address: 0.0.0.0\r\nnet mask  : 0.0.0.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\nmsh />\r\nmsh />",
+  "edgeimu info": "edgeimu info\r\nedgeimu: running=1 nominal_hz=208 measured_millihz=208910 samples=16656 drops=0 gaps=0 bus_errors=0 queue_high=1\r\nmsh />\r\nmsh />",
+  "edgeimu sample": "edgeimu sample\r\nedgeimu: quality=1 rms_x=0.000939 rms_y=0.001664 rms_z=0.001049 vector_rms=0.002179 baseline=1 deviation=nan\r\nmsh />\r\nmsh />",
+  "edmqtt info": "edmqtt info\r\nedmqtt: connected=0 queued=41 sent=69 persisted=10 rejected=127 inbox_dropped=23\r\nmsh />\r\nmsh />",
+  "factory_summary": {
+    "assets": [
+      {
+        "asset_id": "motor-01",
+        "device_id": "ed84-001",
+        "scene_instance": "MOTOR_01",
+        "zone": "B",
+        "detail_model": "models/induction_motor.glb",
+        "sensor_node": "IMU_Sensor",
+        "display_name_zh": "旋转实验区电机 01",
+        "binding_state": "verified",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "cnc-01",
+        "device_id": null,
+        "scene_instance": "CNC_MACHINE_01",
+        "zone": "A",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "生产区数控加工中心",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "pumpset-02",
+        "device_id": null,
+        "scene_instance": "PUMPSET_02",
+        "zone": "C",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "公用工程循环泵机组",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "agv-02",
+        "device_id": null,
+        "scene_instance": "AGV_02",
+        "zone": "D",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "仓储物流搬运车",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "spare-motor-01",
+        "device_id": null,
+        "scene_instance": "SPARE_MOTOR_01",
+        "zone": "E",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "检修区备用电机",
+        "binding_state": "provisional",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "gateway-01",
+        "device_id": null,
+        "scene_instance": "MQTT_GATEWAY_01",
+        "zone": "F",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "IT/OT 区 MQTT 网关",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      }
+    ],
+    "counts": {
+      "ONLINE": 0,
+      "STALE": 0,
+      "UNKNOWN": 6
+    },
+    "online_threshold_ms": 30000
+  }
+}

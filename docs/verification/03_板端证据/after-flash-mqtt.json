@@ -1,0 +1,1278 @@
+[
+  {
+    "time": 1790954406.3373327,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954406.3600864,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954406337
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954409.4128249,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-59-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954409.417326,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954409.4210212,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-59-1",
+      "revision": 1,
+      "server_received_ms": 1790954409411
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954409.4255736,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954409418
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954409.4289258,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954409.4364479,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954409428
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954412.4487605,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-59-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954412.4556947,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954412.4576943,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-59-1",
+      "revision": 1,
+      "server_received_ms": 1790954412448
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954412.4633515,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954412455
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954412.472955,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954412.479705,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954412472
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954415.5013173,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-59-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954415.5055828,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-59-1",
+      "revision": 1,
+      "server_received_ms": 1790954415501
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954415.5144682,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954415.5200107,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954415514
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954415.616977,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954415.6344497,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954415617
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954418.6184907,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954418.628585,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954418618
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954418.637978,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954418.6483443,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954418637
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954418.8463554,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954418.854608,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954418846
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954421.878229,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954421.8843365,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954421877
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954421.9185193,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954421.9236119,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954421918
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954422.0942953,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954422.101008,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954422094
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954425.1418173,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954425.1485894,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954425141
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954425.1843724,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954425.1887138,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954425184
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954425.3327575,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954425.3393533,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954425332
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954428.3844762,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954428.3926864,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954428384
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954428.4023876,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954428.4093325,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954428402
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954428.5739903,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954428.5793588,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954428573
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954431.6112075,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954431.6168056,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954431611
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954431.618907,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954431.6249142,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954431618
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954431.817874,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954431.824988,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954431817
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954434.863338,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954434.8683898,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954434863
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954434.878901,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954434.8829272,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954434878
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954435.0620604,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954435.0706506,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954435061
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954438.0736613,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954438.0802524,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954438073
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954438.0826817,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954438.0906603,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954438082
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954438.2979991,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954438.3069751,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954438297
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954441.3222227,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954441.327342,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-60-1",
+      "revision": 1,
+      "server_received_ms": 1790954441322
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954441.329747,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954441.3372934,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954441329
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954441.537914,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954441.5436242,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954441537
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954444.5885315,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954444.5943742,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954444588
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954444.5964377,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954444.602918,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954444596
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954444.806418,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-64-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "WARNING",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954444.81865,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-64-1",
+      "revision": 1,
+      "server_received_ms": 1790954444806
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8127425,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.81824,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8247209,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-64-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "WARNING",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8247209,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954447813
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8310983,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954447823
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8361669,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-64-1",
+      "revision": 1,
+      "server_received_ms": 1790954447828
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8409078,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-64-1",
+      "revision": 2,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954447.8460402,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-64-1",
+      "revision": 2,
+      "server_received_ms": 1790954447840
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954450.8724742,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954450.8765128,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "ALARM",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954450.8814986,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-61-1",
+      "revision": 1,
+      "server_received_ms": 1790954450872
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954450.8844907,
+    "topic": "edgedoctor/site_1/ed84-001/events",
+    "payload": {
+      "schema_version": 2,
+      "device_id": "ed84-001",
+      "event_id": "ed84-001-64-1",
+      "revision": 1,
+      "source": "LIVE_IMU",
+      "condition": "ACTIVE",
+      "ack": "UNACKNOWLEDGED",
+      "severity": "WARNING",
+      "diagnosis": "UNKNOWN",
+      "quality": "VALID",
+      "peak_deviation": 0
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954450.8864858,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-62-1",
+      "revision": 1,
+      "server_received_ms": 1790954450878
+    },
+    "qos": 1
+  },
+  {
+    "time": 1790954450.8931298,
+    "topic": "edgedoctor/site_1/ed84-001/event_receipts",
+    "payload": {
+      "status": "persisted",
+      "event_id": "ed84-001-64-1",
+      "revision": 1,
+      "server_received_ms": 1790954450885
+    },
+    "qos": 1
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "rm /flash/synthetic_smoke_2s.edgp": "rm /flash/synthetic_smoke_2s.edgp\r\nmsh />\r\nmsh />",
+  "edmqtt stop": "edmqtt stop\r\nmsh />\r\nmsh />",
+  "edmqtt config site_1 ed84-001 192.168.1.3 18883": "edmqtt config site_1 ed84-001 192.168.1.3 18883\r\nedmqtt: saved site=site_1 device=ed84-001 broker=192.168.1.3:18883\r\nedmqtt: the device identity is adopted at boot; reboot to apply it\r\nmsh />\r\nmsh />",
+  "edmqtt start": "edmqtt start\r\nmsh />\r\nmsh />",
+  "ifconfig": "ifconfig\r\nnetwork interface device: w0 (Default)\r\nMTU: 1500\r\nMAC: 9c c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_UP INTERNET_UP DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 192.168.1.4\r\ngw address: 192.168.1.1\r\nnet mask  : 255.255.255.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\n\r\nnetwork interface device: w1\r\nMTU: 1500\r\nMAC: 9e c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_DOWN INTERNET_DOWN DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 0.0.0.0\r\ngw address: 0.0.0.0\r\nnet mask  : 0.0.0.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\nmsh />\r\nmsh />",
+  "ls /flash": "ls /flash\r\nDirectory /flash:\r\ncorrupt_crc.edgp    1216                     \r\nedgedoctor.baseline 520                      \r\nedgedoctor.mqtt.pre0926148                      \r\nedgedoctor.mqtt.pre1002340                      \r\nedgedoctor.mqtt     340                      \r\nedgedoctor          <DIR>                    \r\ntruncated.edgp      100                      \r\nwifi_config.json    36                       \r\nwifi_config.pre1002 46                       \r\nwrite_test.txt      4                        \r\nmsh />\r\nmsh />"
+}

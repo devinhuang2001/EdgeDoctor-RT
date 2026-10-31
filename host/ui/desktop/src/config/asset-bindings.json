@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-09-14",
+  "notes_zh": "资产绑定冻结配置。scene_instance 必须存在于 factory-web.glb 的节点；verified 绑定必须带真实 device_id。provisional 与 unbound 不得显示为在线设备。",
+  "zones": [
+    { "zone": "A", "scene_root": "ZONE_A", "display_name_zh": "生产装置", "display_name_en": "Production" },
+    { "zone": "B", "scene_root": "ZONE_B", "display_name_zh": "旋转设备", "display_name_en": "Rotating Equipment" },
+    { "zone": "C", "scene_root": "ZONE_C", "display_name_zh": "能源与公用工程", "display_name_en": "Energy & Utilities" },
+    { "zone": "D", "scene_root": "ZONE_D", "display_name_zh": "仓储物流", "display_name_en": "Warehouse" },
+    { "zone": "E", "scene_root": "ZONE_E", "display_name_zh": "维护检修", "display_name_en": "Maintenance" },
+    { "zone": "F", "scene_root": "ZONE_F", "display_name_zh": "IT / OT 中心", "display_name_en": "IT / OT Center" }
+  ],
+  "assets": [
+    {
+      "asset_id": "motor-01",
+      "device_id": "ed84-001",
+      "scene_instance": "MOTOR_01",
+      "zone": "B",
+      "detail_model": "models/induction_motor.glb",
+      "sensor_node": "IMU_Sensor",
+      "display_name_zh": "旋转实验区电机 01",
+      "binding_state": "verified"
+    },
+    {
+      "asset_id": "cnc-01",
+      "device_id": null,
+      "scene_instance": "CNC_MACHINE_01",
+      "zone": "A",
+      "detail_model": null,
+      "sensor_node": null,
+      "display_name_zh": "生产区数控加工中心",
+      "binding_state": "unbound"
+    },
+    {
+      "asset_id": "pumpset-02",
+      "device_id": null,
+      "scene_instance": "PUMPSET_02",
+      "zone": "C",
+      "detail_model": null,
+      "sensor_node": null,
+      "display_name_zh": "公用工程循环泵机组",
+      "binding_state": "unbound"
+    },
+    {
+      "asset_id": "agv-02",
+      "device_id": null,
+      "scene_instance": "AGV_02",
+      "zone": "D",
+      "detail_model": null,
+      "sensor_node": null,
+      "display_name_zh": "仓储物流搬运车",
+      "binding_state": "unbound"
+    },
+    {
+      "asset_id": "spare-motor-01",
+      "device_id": null,
+      "scene_instance": "SPARE_MOTOR_01",
+      "zone": "E",
+      "detail_model": null,
+      "sensor_node": null,
+      "display_name_zh": "检修区备用电机",
+      "binding_state": "provisional"
+    },
+    {
+      "asset_id": "gateway-01",
+      "device_id": null,
+      "scene_instance": "MQTT_GATEWAY_01",
+      "zone": "F",
+      "detail_model": null,
+      "sensor_node": null,
+      "display_name_zh": "IT/OT 区 MQTT 网关",
+      "binding_state": "unbound"
+    }
+  ]
+}

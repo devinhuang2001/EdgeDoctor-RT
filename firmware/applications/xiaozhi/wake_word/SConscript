@@ -1,0 +1,3 @@
+# EdgeDoctor supplies explicit disabled ABI stubs.
+group = []
+Return('group')

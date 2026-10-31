@@ -1,0 +1,17 @@
+# EdgeDoctor needs CMSIS-DSP, not the wake-word inference runtime.
+from building import *
+import os
+
+cwd = GetCurrentDir()
+cmsis = os.path.join(cwd, 'edge-impulse-sdk', 'CMSIS')
+src = []
+for category in ('TransformFunctions', 'CommonTables', 'BasicMathFunctions',
+                 'FastMathFunctions', 'StatisticsFunctions', 'SupportFunctions',
+                 'MatrixFunctions', 'ComplexMathFunctions'):
+    src += Glob(os.path.join(cmsis, 'DSP', 'Source', category, '*.c'))
+group = DefineGroup('edgedoctor_cmsis_dsp', src, depend=[],
+    CPPPATH=[os.path.join(cmsis, 'DSP', 'Include'),
+             os.path.join(cmsis, 'DSP', 'PrivateInclude'),
+             os.path.join(cmsis, 'Core', 'Include')],
+    LOCAL_CFLAGS=' -DARM_MATH_CM55 -DARM_MATH_DSP -DARM_MATH_AUTOVECTORIZE')
+Return('group')

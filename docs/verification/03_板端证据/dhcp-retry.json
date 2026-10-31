@@ -1,0 +1,7 @@
+{
+  "ifconfig w0 0.0.0.0 0.0.0.0 0.0.0.0": "ifconfig w0 0.0.0.0 0.0.0.0 0.0.0.0\r\nconfig : w0\r\nIP addr: 0.0.0.0\r\nGateway: 0.0.0.0\r\nnetmask: 0.0.0.0\r\nmsh />\r\nmsh />",
+  "ifconfig w0 dhcp": "ifconfig w0 dhcp\r\nmsh />\r\nmsh />",
+  "ifconfig": "ifconfig\r\nnetwork interface device: w0 (Default)\r\nMTU: 1500\r\nMAC: 9c c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_UP INTERNET_DOWN DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 0.0.0.0\r\ngw address: 0.0.0.0\r\nnet mask  : 0.0.0.0\r\ndns server #0: 0.0.0.0\r\ndns server #1: 0.0.0.0\r\n\r\nnetwork interface device: w1\r\nMTU: 1500\r\nMAC: 9e c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_DOWN INTERNET_DOWN DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 0.0.0.0\r\ngw address: 0.0.0.0\r\nnet mask  : 0.0.0.0\r\ndns server #0: 0.0.0.0\r\ndns server #1: 0.0.0.0\r\nmsh />\r\nmsh />\u001b[31m[E/xz.ws] Waiting internet... \r\n\u001b[0m\r\n",
+  "edgeimu info": "edgeimu info\r\nedgeimu: running=1 nominal_hz=208 measured_millihz=210967 samples=21328 drops=0 gaps=0 bus_errors=0 queue_high=0\r\nmsh />\r\nmsh />",
+  "edmqtt info": "edmqtt info\r\nedmqtt: connected=0 queued=47 sent=0 persisted=0 rejected=115\r\nmsh />\r\nmsh />"
+}

@@ -1,0 +1,194 @@
+/* 页面骨架：顶栏、页面栅格、底部导航、桌面宽度收放与低分辨率守卫。 */
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- 顶栏 ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: var(--topbar-height);
+  padding: 10px 26px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border-radius: 13px;
+  background: linear-gradient(140deg, var(--brand-500), var(--brand-700));
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: 0 8px 18px rgba(11, 83, 208, 0.28);
+}
+.brand-text strong { display: block; font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+.brand-text small { display: block; color: var(--text-faint); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.topbar-tagline { max-width: 220px; color: var(--text-soft); font-size: 12px; line-height: 1.45; }
+
+.stat-strip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-soft);
+}
+.stat-strip .stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 12px;
+  border-right: 1px solid var(--border);
+}
+.stat-strip .stat:last-child { border-right: 0; }
+.stat-strip .stat-icon { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: var(--idle-bg); font-size: 13px; }
+.stat-strip .stat-value { font-size: 17px; font-weight: 800; line-height: 1.1; }
+.stat-strip .stat-label { color: var(--text-faint); font-size: 10.5px; letter-spacing: 0.04em; }
+.stat-strip .stat.ok .stat-icon { background: var(--ok-bg); color: var(--ok); }
+.stat-strip .stat.warn .stat-icon { background: var(--warn-bg); color: var(--warn); }
+.stat-strip .stat.crit .stat-icon { background: var(--crit-bg); color: var(--crit); }
+
+.topbar-side { display: flex; align-items: center; gap: 14px; }
+.service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.service-chip .service-time { color: var(--text-faint); font-size: 11px; }
+
+/* ---------- 主区 ---------- */
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1840px;
+  margin: 0 auto;
+  padding: 22px 26px calc(var(--nav-height) + 42px);
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.page-head h1 { font-size: 27px; font-weight: 800; letter-spacing: -0.03em; }
+.page-head .page-sub { margin-top: 3px; color: var(--text-soft); font-size: 12.5px; }
+.page-head-actions { display: flex; align-items: center; gap: 10px; }
+
+.page-grid { display: grid; gap: 16px; align-items: start; }
+.factory-grid { grid-template-columns: 292px minmax(560px, 1fr) 330px; }
+.monitor-grid { grid-template-columns: minmax(560px, 1fr) 372px; }
+.events-grid { grid-template-columns: 344px minmax(520px, 1fr) 344px; }
+.analysis-grid { grid-template-columns: 320px minmax(560px, 1fr) 356px; }
+.stack { display: grid; gap: 16px; }
+
+/* ---------- 底部导航 ---------- */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: var(--shadow-pill);
+  backdrop-filter: blur(10px);
+  max-width: calc(100vw - 32px);
+}
+.bottom-nav button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.bottom-nav button:hover { background: var(--brand-50); color: var(--brand-700); }
+.bottom-nav button[aria-current="page"] {
+  background: var(--brand-600);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(0, 89, 230, 0.32);
+}
+
+/* ---------- 桌面宽度收放 ---------- */
+@media (max-width: 1600px) {
+  .factory-grid { grid-template-columns: 268px minmax(520px, 1fr) 306px; }
+  .events-grid { grid-template-columns: 320px minmax(480px, 1fr); }
+  .events-grid > .events-detail-column { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr); gap: 16px; }
+}
+
+@media (max-width: 1439px) {
+  .app-main { padding: 18px 18px calc(var(--nav-height) + 36px); }
+  .topbar { gap: 14px; padding: 10px 18px; }
+  .topbar-tagline { display: none; }
+  .factory-grid { grid-template-columns: 246px minmax(440px, 1fr); }
+  .factory-grid > .factory-detail-column { grid-column: 1 / -1; }
+  .analysis-grid { grid-template-columns: 280px minmax(440px, 1fr); }
+  .analysis-grid > .analysis-side-column { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .monitor-grid { grid-template-columns: minmax(480px, 1fr) 330px; }
+}
+
+@media (max-width: 1279px) {
+  .stat-strip .stat:nth-child(n + 3) { display: none; }
+  .monitor-grid,
+  .factory-grid,
+  .analysis-grid,
+  .events-grid { grid-template-columns: minmax(0, 1fr); }
+  .events-grid > .events-detail-column,
+  .analysis-grid > .analysis-side-column,
+  .factory-grid > .factory-detail-column { grid-template-columns: 1fr; }
+  .bottom-nav button { padding: 10px 12px; }
+  .bottom-nav button span { display: none; }
+}
+
+/* 低于 1024 px 不做移动端压缩，改用简化桌面提示（规格 §4） */
+.desktop-guard { display: none; }
+
+@media (max-width: 1023px) {
+  .app-main, .bottom-nav { display: none; }
+  .desktop-guard {
+    display: block;
+    margin: 24px auto;
+    max-width: 520px;
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+  .desktop-guard h1 { font-size: 20px; }
+  .topbar-side, .stat-strip { display: none; }
+}

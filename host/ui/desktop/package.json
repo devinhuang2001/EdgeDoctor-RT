@@ -1,0 +1,35 @@
+{
+  "name": "edgedoctor-desktop-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "validate:bindings": "node scripts/build-bindings.mjs",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "build": "npm run validate:bindings && tsc -b && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "5.0.2",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "three": "0.180.0",
+    "vite": "7.1.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.5",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "@types/three": "^0.180.0",
+    "eslint": "9.39.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.12.0",
+    "jsdom": "26.1.0",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.70.0",
+    "vitest": "3.2.4"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "normal": 0,
+  "bearing_inner": 1,
+  "bearing_outer": 2,
+  "misalignment": 3,
+  "unbalance": 4
+}
+

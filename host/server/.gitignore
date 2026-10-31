@@ -1,0 +1,9 @@
+# Local deployment state; never commit credentials or runtime data.
+passwd
+.env
+data/
+log/
+*.db
+*.db-wal
+*.db-shm
+*.edv2

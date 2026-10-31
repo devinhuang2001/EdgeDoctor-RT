@@ -1,0 +1,17 @@
+{
+  "name": "edgedoctor-rt-acceptance",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "EdgeDoctor-RT 电脑版控制台的浏览器验收测试（规格 02 的 BROWSER / VIS / GPU 层）。",
+  "scripts": {
+    "test:ui": "playwright test",
+    "test:ui:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.5.1",
+    "typescript": "5.9.2"
+  }
+}

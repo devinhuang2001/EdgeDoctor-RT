@@ -1,0 +1,30 @@
+{
+  "audio": {
+    "sample_rate": 16000,
+    "window_seconds": 1.0,
+    "frame_ms": 25,
+    "hop_ms": 10,
+    "fft_size": 512,
+    "mel_bins": 40,
+    "log_floor": 1e-6
+  },
+  "vibration": {
+    "sample_rate": 6400,
+    "window_seconds": 1.0,
+    "frame_ms": 40,
+    "hop_ms": 20,
+    "fft_size": 256,
+    "log_bands": 64,
+    "channels": 2,
+    "log_floor": 1e-6
+  },
+  "stream": {
+    "chunk_ms": 20,
+    "window_overlap": 0.5
+  },
+  "edgepack_quantization": {
+    "audio_full_scale_pa": 4.0,
+    "vibration_full_scale_g": 50.0,
+    "clipping_policy": "reject"
+  }
+}

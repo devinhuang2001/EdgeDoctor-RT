@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "frozen_at": "2026-09-14",
+  "source_pack": "EdgeDoctor_SmartFactory_3D_AssetPack.zip :: EdgeDoctor_Factory_Pack",
+  "assets": [
+    {
+      "path": "public/models/factory-web.glb",
+      "pack_path": "EdgeDoctor_SmartFactory_Web.glb",
+      "sha256": "3d25f46f71bf198d486740dea550169ee1a10a54f1082ca4b00da1f31d6dc82b",
+      "bytes": 4911528,
+      "usage_zh": "六区工厂总览场景"
+    },
+    {
+      "path": "public/models/induction_motor.glb",
+      "pack_path": "assets/induction_motor.glb",
+      "sha256": "effc84ec83b7f4b66250aac8441d09183341854790226bcd5bf73d70c655bee8",
+      "bytes": 142128,
+      "usage_zh": "电机详情场景，含 IMU_Sensor 语义节点"
+    },
+    {
+      "path": "public/models/LICENSE.txt",
+      "pack_path": "LICENSE.txt",
+      "sha256": "aec2581523c18ed2b7824cf59be348a4b0c82afb383f017d3eb24145caaf1c62",
+      "bytes": 1527,
+      "usage_zh": "几何资产 CC0 与源脚本 MIT 许可证原文"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# 构建产物
+build/
+Debug/
+Release/
+*.o
+*.obj
+*.d
+*.axf
+*.map
+*.lst
+*.crf
+.sconsign.dblite
+.settings/.rtmenus
+
+# 依赖
+node_modules/
+.venv/
+.venv-inference/
+__pycache__/
+*.pyc
+
+# 数据（约 6 GB，不随仓库分发）
+data/raw/
+data/manifests/
+
+# 本地环境
+.env
+*.log
+.DS_Store
+Thumbs.db

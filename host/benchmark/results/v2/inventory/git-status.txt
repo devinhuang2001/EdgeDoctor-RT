@@ -1,0 +1,20 @@
+## codex/edgedoctor-v2
+ M app/edgepet/edgepet_sensor.c
+?? EdgeDoctor-RT/LICENSE
+?? EdgeDoctor-RT/README.md
+?? EdgeDoctor-RT/ai/
+?? EdgeDoctor-RT/artifacts/
+?? EdgeDoctor-RT/benchmark/
+?? EdgeDoctor-RT/data/
+?? "EdgeDoctor-RT/docs/EdgeDoctor-RT-\345\256\214\346\225\264\351\241\271\347\233\256\346\225\205\344\272\213.md"
+?? EdgeDoctor-RT/docs/data-pipeline.md
+?? EdgeDoctor-RT/docs/decision-log.md
+?? EdgeDoctor-RT/docs/training-report-kaist-v1.md
+?? EdgeDoctor-RT/docs/verification-matrix.md
+?? EdgeDoctor-RT/firmware/common/include/ed_alarm.h
+?? EdgeDoctor-RT/firmware/common/include/ed_monitor_types.h
+?? EdgeDoctor-RT/firmware/common/include/ed_quality.h
+?? EdgeDoctor-RT/presentation/
+?? EdgeDoctor-RT/scripts/inspect-board-v2.py
+?? slide-deck/
+?? tmp/

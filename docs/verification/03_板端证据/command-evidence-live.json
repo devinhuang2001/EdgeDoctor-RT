@@ -1,0 +1,407 @@
+{
+  "event_id": "ed84-001-66-1",
+  "revision": 1,
+  "initial_factory": {
+    "assets": [
+      {
+        "asset_id": "motor-01",
+        "device_id": "ed84-001",
+        "scene_instance": "MOTOR_01",
+        "zone": "B",
+        "detail_model": "models/induction_motor.glb",
+        "sensor_node": "IMU_Sensor",
+        "display_name_zh": "旋转实验区电机 01",
+        "binding_state": "verified",
+        "status": "ONLINE",
+        "last_telemetry_received_ms": 1790954827202
+      },
+      {
+        "asset_id": "cnc-01",
+        "device_id": null,
+        "scene_instance": "CNC_MACHINE_01",
+        "zone": "A",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "生产区数控加工中心",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "pumpset-02",
+        "device_id": null,
+        "scene_instance": "PUMPSET_02",
+        "zone": "C",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "公用工程循环泵机组",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "agv-02",
+        "device_id": null,
+        "scene_instance": "AGV_02",
+        "zone": "D",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "仓储物流搬运车",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "spare-motor-01",
+        "device_id": null,
+        "scene_instance": "SPARE_MOTOR_01",
+        "zone": "E",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "检修区备用电机",
+        "binding_state": "provisional",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "gateway-01",
+        "device_id": null,
+        "scene_instance": "MQTT_GATEWAY_01",
+        "zone": "F",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "IT/OT 区 MQTT 网关",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      }
+    ],
+    "counts": {
+      "ONLINE": 1,
+      "STALE": 0,
+      "UNKNOWN": 5
+    },
+    "online_threshold_ms": 30000
+  },
+  "ack": {
+    "status": "pending",
+    "command_id": "cmd-1790954827241-131127",
+    "event_id": "ed84-001-66-1"
+  },
+  "evidence": {
+    "status": "pending",
+    "command_id": "evidence-1790954827249-54f92026",
+    "event_id": "ed84-001-66-1",
+    "challenge": "54f92026be5adf0aca320714f0779d0f",
+    "pre_ms": 5000,
+    "post_ms": 5000
+  },
+  "polls": [
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    },
+    {
+      "ack": {
+        "command_id": "cmd-1790954827241-131127",
+        "status": "APPLIED",
+        "payload": {
+          "action": "ack_event",
+          "event_id": "ed84-001-66-1",
+          "actor": "board-acceptance-20261002",
+          "expected_revision": 1
+        }
+      },
+      "evidence": {
+        "command_id": "evidence-1790954827249-54f92026",
+        "status": "APPLIED",
+        "payload": {
+          "action": "request_evidence",
+          "event_id": "ed84-001-66-1",
+          "expected_revision": 1,
+          "challenge": "54f92026be5adf0aca320714f0779d0f",
+          "pre_ms": 5000,
+          "post_ms": 5000
+        }
+      }
+    }
+  ],
+  "evidence_metadata": {
+    "event_id": "ed84-001-66-1",
+    "device_id": "ed84-001",
+    "bytes": 12649,
+    "crc_ok": true,
+    "created_ms": 1790954836319,
+    "download": "/api/v1/evidence/ed84-001-66-1/download"
+  },
+  "final_factory": {
+    "assets": [
+      {
+        "asset_id": "motor-01",
+        "device_id": "ed84-001",
+        "scene_instance": "MOTOR_01",
+        "zone": "B",
+        "detail_model": "models/induction_motor.glb",
+        "sensor_node": "IMU_Sensor",
+        "display_name_zh": "旋转实验区电机 01",
+        "binding_state": "verified",
+        "status": "ONLINE",
+        "last_telemetry_received_ms": 1790954872030
+      },
+      {
+        "asset_id": "cnc-01",
+        "device_id": null,
+        "scene_instance": "CNC_MACHINE_01",
+        "zone": "A",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "生产区数控加工中心",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "pumpset-02",
+        "device_id": null,
+        "scene_instance": "PUMPSET_02",
+        "zone": "C",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "公用工程循环泵机组",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "agv-02",
+        "device_id": null,
+        "scene_instance": "AGV_02",
+        "zone": "D",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "仓储物流搬运车",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "spare-motor-01",
+        "device_id": null,
+        "scene_instance": "SPARE_MOTOR_01",
+        "zone": "E",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "检修区备用电机",
+        "binding_state": "provisional",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      },
+      {
+        "asset_id": "gateway-01",
+        "device_id": null,
+        "scene_instance": "MQTT_GATEWAY_01",
+        "zone": "F",
+        "detail_model": null,
+        "sensor_node": null,
+        "display_name_zh": "IT/OT 区 MQTT 网关",
+        "binding_state": "unbound",
+        "status": "UNKNOWN",
+        "last_telemetry_received_ms": null
+      }
+    ],
+    "counts": {
+      "ONLINE": 1,
+      "STALE": 0,
+      "UNKNOWN": 5
+    },
+    "online_threshold_ms": 30000
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "ifconfig": "ifconfig\r\nnetwork interface device: w0 (Default)\r\nMTU: 1500\r\nMAC: 9c c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_UP INTERNET_UP DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 192.168.1.4\r\ngw address: 192.168.1.1\r\nnet mask  : 255.255.255.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\n\r\nnetwork interface device: w1\r\nMTU: 1500\r\nMAC: 9e c7 d3 e1 bb 8c \r\nFLAGS: UP LINK_DOWN INTERNET_DOWN DHCP_ENABLE ETHARP BROADCAST IGMP\r\nip address: 0.0.0.0\r\ngw address: 0.0.0.0\r\nnet mask  : 0.0.0.0\r\ndns server #0: 192.168.1.1\r\ndns server #1: 0.0.0.0\r\nmsh />\r\nmsh />",
+  "edgeimu info": "edgeimu info\r\nedgeimu: running=1 nominal_hz=208 measured_millihz=209558 samples=8528 drops=0 gaps=0 bus_errors=0 queue_high=0\r\nmsh />\r\nmsh />",
+  "edmqtt info": "edmqtt info\r\nedmqtt: connected=0 queued=49 sent=24 persisted=0 rejected=17\r\nmsh />\r\nmsh />"
+}

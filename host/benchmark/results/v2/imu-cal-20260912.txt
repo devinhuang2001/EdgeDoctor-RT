@@ -1,0 +1,7 @@
+edgeimu cal selftest
+edgeimu: cal selftest PASS samples=416 gravity=1.0029 dynamic_rms=0.0015
+msh />
+msh />edgeimu regs
+edgeimu: who=0x6a fifo_ctrl=18 00 01 00 00 00 status=00 10 00 00 0b ad
+msh />
+msh />
