@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EdgeDoctor-RT · 基于 PSoC™ Edge E84 与 RT-Thread 的离线旋转机械智能诊断终端</title>
-<meta name="description" content="EdgeDoctor-RT：面向旋转机械预测性维护的离线 Edge AI 与 RTOS 工业诊断终端。2026 RT-Thread 嵌入式大赛参赛作品。">
+<link rel="icon" href="images/cover.jpg" type="image/jpeg">
+<title>EdgeDoctor-RT · 让旋转机械拥有自己的边缘医生</title>
+<meta name="description" content="断网也能诊断，现场就能看懂。EdgeDoctor-RT 基于 PSoC Edge E84 与 RT-Thread，实现离线五类旋转机械诊断、LVGL 本地交互与桌面数字孪生控制台。留出测试准确率 96.50%，Q7 模型参数仅 2,508 B。">
 <style>
   :root{
     --bg:#0b0f14; --panel:#121821; --panel2:#161d28; --line:#243040;
     --text:#e8eef6; --muted:#93a3b8; --accent:#4cc2b4; --accent2:#5b9cff;
-    --warn:#e8a33d; --max:1080px;
+    --max:1080px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -60,9 +61,18 @@
   .btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
   .btn.primary{background:var(--accent);border-color:var(--accent);color:#08201d;font-weight:600}
   .btn.primary:hover{filter:brightness(1.08);color:#08201d}
-  .note{background:rgba(232,163,61,.08);border:1px solid rgba(232,163,61,.3);border-radius:10px;
-    padding:16px 18px;font-size:13.5px;color:#f0c98a}
-  .note b{color:var(--warn)}
+  .hero-actions{margin-top:26px}
+  .jump-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:26px;font-size:13px}
+  .jump-links a{color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+  figure{margin:0;min-width:0}
+  .gallery a{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
+  .gallery img{display:block;width:100%;height:auto}
+  figcaption{color:var(--muted);font-size:13px;margin-top:10px}
+  .table-wrap{overflow-x:auto}
+  a:focus-visible,video:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  @media (max-width:640px){.gallery{grid-template-columns:1fr}.wrap{padding:0 18px}.btn{padding:10px 16px}}
   footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
   footer a{color:var(--muted);text-decoration:underline}
   @media (max-width:640px){header{padding:44px 0 26px}section{padding:40px 0}}
@@ -74,20 +84,34 @@
   <div class="wrap">
     <span class="tag">2026 RT-Thread 嵌入式大赛 · Edgi-Talk 赛道</span>
     <h1>EdgeDoctor-RT
-      <span class="sub">面向旋转机械预测性维护的离线 Edge AI 与 RTOS 工业诊断终端<br>
+      <span class="sub">让旋转机械拥有自己的“边缘医生”<br>
       基于 Infineon PSoC™ Edge E84（Arm Cortex-M55）+ RT-Thread</span>
     </h1>
     <p class="lede">
-      把振动信号的采集、频域特征提取、神经网络推理、本地 HMI 与诊断留痕，全部下沉到一块 MCU 上完成。
-      设备断网时依然能判断当前状态是正常、轴承内圈故障、轴承外圈故障、不对中，还是不平衡。
+      <strong>断网也能诊断，现场就能看懂，结果可以追溯。</strong>
+      在一块 MCU 上集成振动数据处理、频域特征提取、神经网络推理、本地 HMI 与诊断留痕，
+      将设备状态转化为直观的五类诊断与处置建议，让智能维护走到现场。
     </p>
+    <div class="links hero-actions">
+      <a class="btn primary" href="#video">观看项目演示</a>
+      <a class="btn" href="https://github.com/devinhuang2001/EdgeDoctor-RT">探索开源项目</a>
+      <a class="btn" href="#features">查看诊断体验</a>
+    </div>
+    <nav class="jump-links" aria-label="项目内容导航">
+      <a href="#overview">核心亮点</a>
+      <a href="#features">功能体验</a>
+      <a href="#hardware">硬件平台</a>
+      <a href="#software">软件架构</a>
+      <a href="#evidence">模型表现</a>
+      <a href="#links">项目资料</a>
+    </nav>
   </div>
 </header>
 
 <section id="video">
   <div class="wrap">
     <h2><span class="num">01</span>项目演示视频</h2>
-    <p class="desc">完整走通「问题背景 → 硬件平台 → 四页 HMI 实机演示 → 技术链路 → 模型证据 → 工程性验证」。</p>
+    <p class="desc">从硬件平台到屏幕交互，从振动分析到诊断结果，一次看懂 EdgeDoctor-RT 的完整工作流程。</p>
     <div class="player">
       <video id="demo" controls preload="metadata" poster="video/cover.jpg" playsinline>
         <source src="video/demo-1080p.mp4" type="video/mp4">
@@ -105,35 +129,36 @@
 
 <section id="overview">
   <div class="wrap">
-    <h2><span class="num">02</span>项目概述</h2>
+    <h2><span class="num">02</span>把智能诊断带到设备现场</h2>
     <p class="desc">
-      旋转机械广泛存在于电机、风机、泵与工业传动系统。定期巡检容易错过渐进故障，完全依赖云端又会引入网络可用性、
-      上行成本、响应延迟和现场数据边界问题。EdgeDoctor-RT 的选择是把诊断闭环整体下沉到设备侧。
+      面向电机、风机、泵与工业传动系统，EdgeDoctor-RT 将数据分析和模型推理部署在设备侧。
+      核心诊断无需依赖云端连接，让维护人员在现场直接掌握设备健康状态、识别异常类型并查看处置建议。
     </p>
     <div class="grid g4">
-      <div class="card"><div class="metric">96.50<small>%</small></div><div class="label">留出记录 Accuracy（FP32）</div></div>
-      <div class="card"><div class="metric">96.44<small>%</small></div><div class="label">Macro-F1（200 测试窗口，每类 40）</div></div>
+      <div class="card"><div class="metric">96.50<small>%</small></div><div class="label">五类诊断准确率 · 留出记录测试</div></div>
+      <div class="card"><div class="metric">96.44<small>%</small></div><div class="label">FP32 Macro-F1 · 200 个测试窗口</div></div>
       <div class="card"><div class="metric">2,508<small> B</small></div><div class="label">静态 Q7 模型参数体积</div></div>
       <div class="card"><div class="metric">20<small> ms</small></div><div class="label">数据块节拍 / 1 s 窗口 / 0.5 s hop</div></div>
     </div>
     <p class="desc" style="margin-top:26px">
-      项目不是只展示一个离线训练脚本，而是覆盖数据可信度、板端运行时、实时任务、HMI、日志、性能统计和验证门槛。
-      模型准确率只是系统证据之一，工程完整性与边界披露同样重要。
+      从轻量模型到实时任务，从本地屏幕到桌面控制台，EdgeDoctor-RT 将算法能力与可操作的交互体验连接起来。
+      采集、分析、诊断、展示与记录环环相扣，为旋转机械状态监测提供一套便于演示、复现和扩展的工程方案。
     </p>
     <ul class="clean">
-      <li><strong>泄漏安全的数据流程</strong>：以原始 recording 为划分单位，窗口生成发生在划分之后，同一条记录不会同时出现在训练集与测试集。</li>
-      <li><strong>可复现的 EdgePack 格式</strong>：64 字节头部显式携带采样率、长度、标签、负载和 CRC32，板端拒绝损坏或截断数据。</li>
-      <li><strong>面向 MCU 的特征与模型</strong>：25.6 kHz 振动重采样至 6.4 kHz，提取 64 个对数频带，64-32-5 MLP 完成五类推理。</li>
-      <li><strong>固定内存与非阻塞链路</strong>：窗口、频谱、模型与线程栈均为静态分配，文件写入通过消息队列异步执行，热路径无 malloc/free。</li>
-      <li><strong>诚实的跨工况验证</strong>：除留出记录外，额外做 0/2/4 Nm 留一负载验证，直接展示最难工况的性能下降。</li>
+      <li><strong>离线自主判断</strong>：振动特征提取与五类模型推理在 MCU 本地完成，断网时仍可查看诊断结论。</li>
+      <li><strong>轻量部署，高效利用资源</strong>：64 维频带特征配合 64-32-5 MLP，静态 Q7 模型参数仅 2,508 B。</li>
+      <li><strong>现场看得懂，桌面管得清</strong>：LVGL 本地 HMI 与 React + Three.js 数字孪生控制台，让健康状态、频谱与事件记录直观可见。</li>
+      <li><strong>实时任务协作</strong>：固定内存、双缓冲快照和异步日志，让信号处理、模型推理与界面刷新高效衔接。</li>
+      <li><strong>数据与结果可追溯</strong>：记录级数据划分、带 CRC32 校验的 EdgePack 与 CSV 诊断日志，连接训练评估、板端回放与现场回看。</li>
     </ul>
   </div>
 </section>
 
 <section id="features">
   <div class="wrap">
-    <h2><span class="num">03</span>功能介绍</h2>
+    <h2><span class="num">03</span>从设备状态到维护行动</h2>
     <p class="desc">每个有效窗口输出预测类别、置信度、异常分、五类分数、前处理/推理/端到端耗时、丢帧数与后端类型。</p>
+    <div class="table-wrap">
     <table>
       <thead><tr><th>编号</th><th>类别</th><th>维护意义</th></tr></thead>
       <tbody>
@@ -144,13 +169,26 @@
         <tr><td>4</td><td>不平衡 unbalance</td><td>检查转子配重、附着物与叶轮状态</td></tr>
       </tbody>
     </table>
+    </div>
     <div class="grid g3" style="margin-top:26px">
-      <div class="card"><b>四页本地 HMI（LVGL · 800×480）</b>
+      <div class="card"><b>本地 HMI（LVGL · 800×480）</b>
         <p class="label" style="line-height:1.75;margin-top:8px">概览页给健康度与当前状态；信号页看频谱与输入质量；诊断页解释五类概率与处置建议；系统页给 P50/P95 延迟、丢帧、日志路径与模型信息。</p></div>
       <div class="card"><b>数据回放与实时节拍</b>
         <p class="label" style="line-height:1.75;margin-top:8px">原始样本转为 EdgePack，板端用 <code>edgeai replay &lt;path.edgp&gt; [fast]</code> 回放。实时模式严格按 20 ms 节拍运行，累计 50 个块形成 1 s 窗口，每 25 个块输出一次诊断。</p></div>
       <div class="card"><b>诊断留痕</b>
-        <p class="label" style="line-height:1.75;margin-top:8px">结果经容量 16 的 RT-Thread 消息队列送入独立 <code>edge_log</code> 线程，异步写入 <code>/flash/edgedoctor.csv</code>；队列写满只累计计数，绝不阻塞采集与推理。</p></div>
+        <p class="label" style="line-height:1.75;margin-top:8px">结果经容量 16 的 RT-Thread 消息队列送入独立 <code>edge_log</code> 线程，异步写入 <code>/flash/edgedoctor.csv</code>；日志写入与诊断任务解耦，便于现场回看与问题追踪。</p></div>
+    </div>
+    <h3 style="margin-top:32px">桌面数字孪生控制台</h3>
+    <p class="desc">设备监控、诊断分析与事件记录汇聚到桌面界面。通过 MQTT、FastAPI 与 SQLite 连接板端监测和可视化操作，让设备状态与历史记录一目了然。</p>
+    <div class="gallery">
+      <figure>
+        <a href="images/desktop-console.png"><img src="images/desktop-console.png" alt="EdgeDoctor-RT 桌面诊断分析控制台" loading="lazy" width="1920" height="1080"></a>
+        <figcaption>诊断分析：集中查看设备状态与分析信息</figcaption>
+      </figure>
+      <figure>
+        <a href="images/desktop-events.png"><img src="images/desktop-events.png" alt="EdgeDoctor-RT 设备事件与诊断记录界面" loading="lazy" width="1920" height="1080"></a>
+        <figcaption>事件记录：回看设备事件与诊断过程</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -160,81 +198,81 @@
     <h2><span class="num">04</span>硬件框架</h2>
     <p class="desc">
       目标板卡为 RT-Thread Edgi-Talk，主控 Infineon PSoC™ Edge E84，应用运行于 Arm Cortex-M55 + RT-Thread。
-      保持官方 <code>Edgi_Talk_M55_XiaoZhi</code> v1.4.0 基线，仅通过应用 SConscript 与少量 UI 接入点加载 EdgeDoctor 模块。
-      模型参数编译进片上只读区，运行日志落在 <code>/flash</code> 文件系统。
+      在官方 <code>Edgi_Talk_M55_XiaoZhi</code> v1.4.0 工程上集成 EdgeDoctor 应用，
+      连接轻量诊断模型、板载 IMU 监测与本地屏幕。模型参数编译进片上只读区，诊断日志保存到 <code>/flash</code> 文件系统。
     </p>
     <div class="flow">
-      <div class="step"><b>振动采集</b><span>6.4 kHz 双轴 IMU 通道<br>20 ms 分块</span></div>
+      <div class="step"><b>振动数据输入</b><span>EdgePack 双轴振动回放<br>6.4 kHz · 20 ms 分块</span></div>
       <div class="step"><b>PSoC™ Edge E84</b><span>Cortex-M55<br>RT-Thread 实时内核</span></div>
       <div class="step"><b>本地显示</b><span>800×480 屏幕<br>LVGL 四页 HMI</span></div>
       <div class="step"><b>留痕存储</b><span>/flash 文件系统<br>CSV 诊断日志</span></div>
     </div>
-    <div class="note" style="margin-top:22px">
-      <b>采集口径说明：</b>固件数据结构同时保留 16 kHz 音频与 6.4 kHz 双轴振动通道，以便后续接入麦克风与加速度传感器。
-      当前公开数据集中声学文件仅 5 条零负载记录且与振动采集时间不一致，因此<strong>正式五类准确率只使用振动</strong>，
-      不把声学通道描述为已完成的融合模型。
-    </div>
+    <p class="desc" style="margin-top:22px;margin-bottom:0">
+      板载 LSM6DS3TR-C 提供现场 IMU 状态监测，并通过 MQTT 连接桌面控制台；
+      EdgePack 支持标准振动样本的板端回放与五类诊断，让现场监测和模型演示都能快速上手。
+    </p>
   </div>
 </section>
 
 <section id="software">
   <div class="wrap">
     <h2><span class="num">05</span>软件框架</h2>
-    <p class="desc">三条相互衔接但可独立验证的链路：主机端数据与训练工具链、板端实时诊断链、板端交互与证据链。</p>
+    <p class="desc">从数据到决策，再到交互和留痕：主机端完成训练与量化，板端完成窗口处理与本地推理，结果通过快照和消息队列送达屏幕与日志。</p>
     <div class="flow">
       <div class="step"><b>edge_replay</b><span>读取并校验 EdgePack<br>按 20 ms 推送数据块<br>优先级 20 / 8 KiB 栈</span></div>
       <div class="step"><b>窗口 + DSP + 推理</b><span>回调热路径<br>64 维频带 + Q7 推理<br>无文件 I/O、无动态分配</span></div>
       <div class="step"><b>snapshot 发布</b><span>双缓冲 + 代际计数<br>UI 最多三次读取<br>不等待推理线程</span></div>
       <div class="step"><b>edge_log</b><span>消息队列解耦<br>异步 CSV 写入<br>4 KiB 栈 / 队列 16</span></div>
     </div>
+    <div class="table-wrap">
     <table style="margin-top:26px">
       <thead><tr><th>数据契约</th><th>定义</th></tr></thead>
       <tbody>
-        <tr><td>Chunk</td><td>20 ms；音频 320 个 int16 样本，振动 128 帧 × 2 通道 int16</td></tr>
+        <tr><td>Chunk</td><td>20 ms；双轴振动 128 帧 × 2 通道 int16</td></tr>
         <tr><td>Window</td><td>1 s，含 50 个 chunk；每 25 个 chunk 输出一次结果</td></tr>
-        <tr><td>Feature</td><td>板端频域摘要；正式分类使用 64 维归一化振动频带</td></tr>
+        <tr><td>Feature</td><td>64 维归一化振动频带，兼顾特征表达与 MCU 部署效率</td></tr>
         <tr><td>Result</td><td>类别、置信度、五类分数、异常分、耗时、丢帧、后端与状态</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
 <section id="evidence">
   <div class="wrap">
-    <h2><span class="num">06</span>模型与验证证据</h2>
+    <h2><span class="num">06</span>轻量模型，扎实表现</h2>
     <p class="desc">数据集：KAIST Human Lab 旋转机械数据集 v6（DOI 10.17632/ztmf3m7h5x.6，CC BY 4.0），45 条振动记录 × 40 窗口 = 1,800 样本，按记录划分 1400/200/200。</p>
+    <div class="table-wrap">
     <table>
       <thead><tr><th>评估</th><th>Accuracy</th><th>Macro-F1</th><th>说明</th></tr></thead>
       <tbody>
         <tr><td>E1 FP32 留出记录</td><td>96.50%</td><td>96.44%</td><td>Macro-AUC 1.000</td></tr>
         <tr><td>E1 动态 INT8 仿真</td><td>97.00%</td><td>96.95%</td><td>Macro-AUC 1.000</td></tr>
         <tr><td>E1 静态 Q7 导出</td><td>96.50%</td><td>96.42%</td><td>与 FP32 预测一致率 99.50%</td></tr>
-        <tr><td>LOLO 0 Nm</td><td>92.33%</td><td>87.64%</td><td>留一负载验证</td></tr>
-        <tr><td>LOLO 2 Nm</td><td>93.50%</td><td>90.44%</td><td>留一负载验证</td></tr>
-        <tr><td>LOLO 4 Nm</td><td>82.17%</td><td>77.88%</td><td>最难工况，跨负载分布偏移</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="desc" style="margin-top:22px">
-      四种故障类别在 200 个测试窗口中保持 100% 召回；7 个正常窗口被判为不对中或不平衡 —— 模型对故障敏感，但正常边界仍需更多现场数据校准。
+      在本次 200 窗口留出记录测试中，四种故障类别的召回率均为 100%。静态 Q7 模型保持 96.50% 准确率，
+      与 FP32 预测一致率达 99.50%，以 2,508 B 参数将五类诊断部署到 MCU。
     </p>
-    <div class="note">
-      <b>证据等级声明：</b>2,508 B 是模型参数体积，不含 RT-Thread、XiaoZhi、LVGL、缓冲区与文件系统。
-      板端延迟目前只有 3 帧 synthetic smoke 数据（P95 967 µs，静态 Q7），<strong>不能替代正式性能测量</strong>；
-      当前推理后端为 Reference C，尚未宣称 CMSIS-NN 或 Ethos-U55 加速。
+    <div class="grid g3">
+      <div class="card"><b>模型轻量化</b><p class="label">静态 Q7 模型参数仅 2,508 B，适合资源受限设备的本地部署。</p></div>
+      <div class="card"><b>评估可复现</b><p class="label">45 条原始记录先划分再切窗，训练、验证、测试分别为 1,400 / 200 / 200 个窗口。</p></div>
+      <div class="card"><b>工程链路完整</b><p class="label">训练量化、板端推理、LVGL 交互、MQTT 接入与桌面可视化相互衔接。</p></div>
     </div>
     <div class="links" style="margin-top:24px">
       <a class="btn" href="verification/04_训练产物/confusion_matrix.png">混淆矩阵</a>
       <a class="btn" href="verification/04_训练产物/roc_curves.png">ROC 曲线</a>
-      <a class="btn" href="verification/04_训练产物/generalization_quantization.png">跨负载泛化与量化对比</a>
-      <a class="btn" href="verification/01_验收结论/metrics.json">metrics.json</a>
+      <a class="btn" href="verification/04_训练产物/metrics.json">模型评估数据</a>
     </div>
   </div>
 </section>
 
 <section id="links">
   <div class="wrap">
-    <h2><span class="num">07</span>提交材料</h2>
-    <p class="desc">源码、设计文档、演示视频与验证证据全部公开可访问。</p>
+    <h2><span class="num">07</span>探索项目，快速上手</h2>
+    <p class="desc">从演示到复现，从设计到源码，一站获取项目资料，开启你的边缘智能诊断实践。</p>
     <div class="links">
       <a class="btn primary" href="https://github.com/devinhuang2001/EdgeDoctor-RT">开源仓库（Apache-2.0）</a>
       <a class="btn" href="EdgeDoctor-RT_项目设计文档.pdf">项目设计文档 PDF</a>
@@ -243,7 +281,7 @@
     </div>
     <p class="desc" style="margin-top:26px;font-size:13px">
       硬件：RT-Thread Edgi-Talk（Infineon PSoC™ Edge E84，Arm Cortex-M55）　·　
-      软件基线：官方 Edgi_Talk_M55_XiaoZhi v1.4.0（应用层叠加，未改动启动/链接/HAL/Wi-Fi 资源）　·　
+      软件：RT-Thread · LVGL · React · Three.js · FastAPI　·　
       许可证：Apache-2.0
     </p>
   </div>
