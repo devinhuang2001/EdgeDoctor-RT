@@ -64,7 +64,7 @@
   .hero-actions{margin-top:26px}
   .jump-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:26px;font-size:13px}
   .jump-links a{color:var(--muted)}
-  .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+  .gallery{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:24px}
   figure{margin:0;min-width:0}
   .gallery a{display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel)}
   .gallery img{display:block;width:100%;height:auto}
@@ -179,15 +179,15 @@
         <p class="label" style="line-height:1.75;margin-top:8px">结果经容量 16 的 RT-Thread 消息队列送入独立 <code>edge_log</code> 线程，异步写入 <code>/flash/edgedoctor.csv</code>；日志写入与诊断任务解耦，便于现场回看与问题追踪。</p></div>
     </div>
     <h3 style="margin-top:32px">桌面数字孪生控制台</h3>
-    <p class="desc">设备监控、诊断分析与事件记录汇聚到桌面界面。通过 MQTT、FastAPI 与 SQLite 连接板端监测和可视化操作，让设备状态与历史记录一目了然。</p>
+    <p class="desc">工厂三维场景、电机模型与振动趋势汇聚到桌面界面。通过 MQTT、FastAPI 与 SQLite 连接板端监测和可视化操作，让设备布局、运行状态与告警变化一目了然。</p>
     <div class="gallery">
       <figure>
-        <a href="images/desktop-console.png"><img src="images/desktop-console.png" alt="EdgeDoctor-RT 桌面诊断分析控制台" loading="lazy" width="1920" height="1080"></a>
-        <figcaption>诊断分析：集中查看设备状态与分析信息</figcaption>
+        <a href="images/desktop-factory-3d.png"><img src="images/desktop-factory-3d.png" alt="EdgeDoctor-RT 工厂 3D 数字孪生总览" loading="lazy" width="1920" height="1080"></a>
+        <figcaption>工厂总览：三维呈现工厂分区、设备布局与资产状态</figcaption>
       </figure>
       <figure>
-        <a href="images/desktop-events.png"><img src="images/desktop-events.png" alt="EdgeDoctor-RT 设备事件与诊断记录界面" loading="lazy" width="1920" height="1080"></a>
-        <figcaption>事件记录：回看设备事件与诊断过程</figcaption>
+        <a href="images/desktop-monitor-trends.png"><img src="images/desktop-monitor-trends.png" alt="EdgeDoctor-RT 电机 3D 模型与振动趋势监测" loading="lazy" width="1920" height="1080"></a>
+        <figcaption>实时监测：电机 3D 模型、振动趋势曲线与告警标记同屏展示</figcaption>
       </figure>
     </div>
   </div>

@@ -45,9 +45,13 @@
 
 Vite + React + TypeScript + Three.js 构建设备监控与分析界面，结合 FastAPI、MQTT 和 SQLite，把设备状态、趋势分析与事件记录连接起来。
 
-![桌面诊断分析控制台](docs/images/desktop-console.png)
+![工厂 3D 数字孪生总览](docs/images/desktop-factory-3d.png)
 
-![设备事件与诊断记录](docs/images/desktop-events.png)
+工厂总览：通过三维场景查看工厂分区、设备布局与资产状态。
+
+![电机 3D 模型与振动趋势监测](docs/images/desktop-monitor-trends.png)
+
+实时监测：结合电机 3D 模型、振动趋势曲线与告警标记，直观查看设备运行状态。
 
 ### 诊断结果可追溯
 
